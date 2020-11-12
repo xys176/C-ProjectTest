@@ -1,4 +1,3 @@
 ﻿  manager.cpp
-  机房预约系统.cpp
-  正在生成代码...
+E:\实战\C++\机房预约系统\机房预约系统\manager.cpp(216): warning C4715: “Manager::cheakRepeat”: 不是所有的控件路径都返回值
   机房预约系统.vcxproj -> E:\实战\C++\机房预约系统\Debug\机房预约系统.exe
