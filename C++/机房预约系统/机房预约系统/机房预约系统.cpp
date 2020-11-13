@@ -7,6 +7,45 @@
 #include"teacher.h"
 #include"manager.h"
 using namespace std;
+//进入学生的子菜单
+void studentMenu(Identity*& student)
+{
+	while (true)
+	{
+		//学生菜单
+		student->operMenu();
+
+		Student* stu = (Student*)student;
+		int select = 0;
+
+		cin >> select;
+
+		if (select == 1) //申请预约
+		{
+			stu->applyOrder();
+		}
+		else if (select == 2) //查看自身预约
+		{
+			stu->showMyorder();
+		}
+		else if (select == 3) //查看所有预约
+		{
+			stu->showAllOrder();
+		}
+		else if (select == 4) //取消预约
+		{
+			stu->canceOrder();
+		}
+		else
+		{
+			delete student;
+			cout << "注销成功" << endl;
+			system("pause");
+			system("cls");
+			return;
+		}
+	}
+}
 
 //进入管理员的子菜单
 void managerMenu(Identity*& manager) {
@@ -99,7 +138,7 @@ void LoginIn(string filename, int type)
 				system("cls");
 				person = new Student(id,name,pwd);  //让开始表明身份的指针指向新建的子类对象（学生对象）
 				//进入学生身份的子菜单
-
+				studentMenu(person);
 				return;
 			}
 		}
